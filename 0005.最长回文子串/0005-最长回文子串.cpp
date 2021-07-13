@@ -5,7 +5,8 @@ public:
         // dp[i][j] 表示 s[i..j] 是否是回文串
         vector<vector<int>> dp(n, vector<int>(n));
         string ans;
-        for (int l = 0; l < n; ++l) {//注意，l和i不要反了
+        // 先枚举子串长度
+        for (int l = 0; l < n; ++l) {//注意，l和i不要反了,i是左边界，j是右边界，l是子串长度
             for (int i = 0; i + l < n; ++i) {
                 int j = i + l;
                 if (l == 0) {
